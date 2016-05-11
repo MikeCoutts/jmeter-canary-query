@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="DockerTest1 Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"> Simple test plan that executes a canary query against Teradata (dbsName).</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="dbsName" elementType="Argument">
+            <stringProp name="Argument.name">dbsName</stringProp>
+            <stringProp name="Argument.value">153.64.73.154</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="dbcPassword" elementType="Argument">
+            <stringProp name="Argument.name">dbcPassword</stringProp>
+            <stringProp name="Argument.value">${__P(dbcPassword,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="runIteration" elementType="Argument">
+            <stringProp name="Argument.name">runIteration</stringProp>
+            <stringProp name="Argument.value">${__P(runIteration,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="runDuration" elementType="Argument">
+            <stringProp name="Argument.name">runDuration</stringProp>
+            <stringProp name="Argument.value">${__P(runDuration,0)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ResultCollector guiclass="AssertionVisualizer" testclass="ResultCollector" testname="Assertion Results" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename">/var/log/jmeter/${__time(MM-dd-yyyy-HH-mm-ss)}_dockerTest1_assertions.log</stringProp>
+        <stringProp name="TestPlan.comments">shows results from any Assertions</stringProp>
+        <boolProp name="ResultCollector.success_only_logging">true</boolProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>false</time>
+            <latency>false</latency>
+            <timestamp>true</timestamp>
+            <success>false</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>true</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename">/var/log/jmeter/${__time(MM-dd-yyyy-HH-mm-ss)}_dockerTest1_results.log</stringProp>
+        <stringProp name="TestPlan.comments">show results from all samplers</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1458155186000</longProp>
+        <longProp name="ThreadGroup.end_time">1458155186000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="validateTestParams" enabled="true">
+          <stringProp name="TestPlan.comments">validates test parameters</stringProp>
+          <stringProp name="BeanShellSampler.query">//debug();
+
+import org.apache.jmeter.util.JMeterUtils;
+
+/*
+  validate the following test parameters for this test...
+  
+	ParameterName			Values		Description
+    	-------------			------		-----------
+	dbsName							Name of Teradata DBS system.
+
+	runIteration			1 - 1 million	Number of iterations to run the test.
+
+	runDuration			1 - 1 million	Number of minutes to run the test.	
+ */
+
+String loghdr1 = &quot;*** Test Plan: &quot; + &quot;${__TestPlanName()}&quot; + &quot;, Sample = &quot; + SampleResult.getSampleLabel();
+String dbsName = vars.get(&quot;dbsName&quot;);  // this was the only way I could reference a String parameter
+
+/*
+ * Let&apos;s first print out test parameters to the jmeter log...
+ */
+log.info(loghdr1);
+log.info(&quot;\tList of test parameters...&quot;);
+log.info(&quot;\t\tdbsName: &quot; + dbsName);
+log.info(&quot;\t\trunIteration: &quot; + ${runIteration});
+log.info(&quot;\t\trunDuration: &quot; + ${runDuration});
+
+SampleResult.setStopTestNow(true);	 // using setStopTestNow until I can figure out JMeter/BeanShell error count
+
+/*
+ * validating test parameters...
+ */
+if ( dbsName == null ) {
+  String errMsg = &quot;***\tdbsName parameter is not set &lt;&quot; + dbsName + &quot;&gt;.&quot;;
+  log.error(loghdr1);
+  log.error(errMsg);
+  return(errMsg);	
+}
+if ( ${runIteration} &lt; 0 &amp;&amp; ${runDuration} &lt; 0 ) {
+  String errMsg = &quot;***\trunIteration &lt;&quot; + ${runIteration} + &quot;&gt; and runDuration &lt;&quot; + ${runDuration} + &quot;&gt; cannot both be less than 0.&quot;;
+  log.error(loghdr1);
+  log.error(errMsg);
+  return(errMsg);
+}
+if ( ${runIteration} &gt; 0 &amp;&amp; ${runDuration} &gt; 0 ) {
+  String errMsg = &quot;***\trunIteration &lt;&quot; + ${runIteration} + &quot;&gt; and runDuration &lt;&quot; + ${runDuration} + &quot;&gt; cannot both be greater than 0.&quot;;
+  log.error(loghdr1);
+  log.error(errMsg);
+  return(errMsg);
+}
+if ( ${runIteration} &gt; 1000000 ) {
+  String errMsg = &quot;***\trunIteration &lt;&quot; + ${runIteration} + &quot;&gt; is greater than 1 million.&quot;;
+  log.error(loghdr1);
+  log.error(errMsg);
+  return(errMsg);
+}
+if ( ${runDuration} &gt; 1000000 ) {
+  String errMsg = &quot;***\trunDuration &lt;&quot; + ${runDuration} + &quot;&gt; is greater than 1 million.&quot;;
+  log.error(loghdr1);
+  log.error(errMsg);
+  return(errMsg);
+}
+
+
+/* 
+ *  all test parameters are valid, we&apos;re good to go...
+ */
+
+SampleResult.setStopTestNow(false);	</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">true</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Canary Thread Group" enabled="true">
+        <stringProp name="TestPlan.comments"> use a single thread to execute a canary query</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${runIteration}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1455739990000</longProp>
+        <longProp name="ThreadGroup.end_time">1455739990000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection (DBC)" enabled="true">
+          <stringProp name="dataSource">${dbsName}</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <boolProp name="keepAlive">false</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery">Select 1</stringProp>
+          <stringProp name="dbUrl">jdbc:teradata://${dbsName}</stringProp>
+          <stringProp name="driver">com.teradata.jdbc.TeraDriver</stringProp>
+          <stringProp name="username">dbc</stringProp>
+          <stringProp name="password">${dbcPassword}</stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Canary Query" enabled="true">
+          <stringProp name="dataSource">${dbsName}</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">select * from dbc.dbcinfo</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="resultSetHandler">Store as Object</stringProp>
+          <stringProp name="TestPlan.comments"> simple canary query</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
