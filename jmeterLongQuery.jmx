@@ -235,10 +235,10 @@ SampleResult.setStopTestNow(false);	</stringProp>
           <stringProp name="password">${dbcPassword}</stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Canary Query" enabled="true">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Long Query" enabled="true">
           <stringProp name="dataSource">${dbsName}</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select * from dbc.dbcinfo</stringProp>
+          <stringProp name="query">select count(*) from dbc.tvfields t1, dbc.tvfields t2, dbc.tvfields t3</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames"></stringProp>
