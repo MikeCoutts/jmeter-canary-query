@@ -5,9 +5,9 @@
 #
 # Example: ./run_test.sh snorri 1 qd0048
 #
-# Note hard coding of /files/jmeterCanaryQuery.jmx 
+# Note hard coding of /files/jmeterLongQuery.jmx 
 
-/usr/bin/jmeter -n -t /files/jmeterCanaryQuery.jmx \
+/usr/bin/jmeter -n -t /files/jmeterLongQuery.jmx \
   -Gsummariser.name=JMeterSummary \
   -Gsummariser.interval=180 \
   -Gsummariser.log=true \
