@@ -9,11 +9,11 @@
 # Note hard coding of /files/jmeterCanaryQuery.jmx 
 
 /usr/bin/jmeter -n -t /files/jmeterCanaryQuery.jmx \
-  -Gsummariser.name=JMeterSummary \
-  -Gsummariser.interval=180 \
-  -Gsummariser.log=true \
-  -Gsummariser.out=true \
-  -GdbsName=$dbsName \
-  -GdbcPassword=$dbcPassword \
-  -GrunIteration=$runIteration \
+  -Jsummariser.name=JMeterSummary \
+  -Jsummariser.interval=180 \
+  -Jsummariser.log=true \
+  -Jsummariser.out=true \
+  -JdbsName=$dbsName \
+  -JdbcPassword=$dbcPassword \
+  -JrunIteration=$runIteration \
 
