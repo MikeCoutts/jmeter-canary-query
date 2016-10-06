@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #
 # Requires three input parameters to be in the containers environment:
 # dbsName
@@ -15,5 +14,4 @@
   -Jsummariser.out=true \
   -JdbsName=$dbsName \
   -JdbcPassword=$dbcPassword \
-  -JrunIteration=$runIteration \
-
+  -JrunIteration=$runIteration
