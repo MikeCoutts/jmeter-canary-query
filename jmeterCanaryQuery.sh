@@ -3,7 +3,7 @@
 #
 # Requires three input parameters: Teradata DBS, test iterations, JMeter Server
 #
-# Example: ./run_test.sh snorri 1 qd0048
+# Example: ./run_test.sh dbsName dbcPassword 1
 #
 # Note hard coding of /files/jmeterCanaryQuery.jmx 
 
